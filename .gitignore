@@ -1,0 +1,11 @@
+.omakedb
+.omakedb.lock
+*.omc
+*.aux
+*.dvi
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
