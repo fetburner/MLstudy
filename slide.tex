@@ -20,35 +20,35 @@
 %% ===============================================
 
 %% 発表会の名前とか（省略可）
-\session{研究室ゼミ}
+\session{ML勉強会}
 %% スライドのタイトル
-\title{住井研究室の\\ステキな Beamer テンプレート}
+\title{信用できる言語\\Standard ML}
 %% 必要ならば、サブタイトルも
 %\subtitle{}
 %% 発表者のお名前
-\author{ラムダ 小太郎}
+\author{@fetburner}
 %% 発表者の所属（[] 内は短い名前）
 %\institute[東北大学　住井・松田研]{東北大学　工学部　電気情報物理工学科\\住井・松田研究室}% 学部生
-\institute[東北大学　住井・松田研]{東北大学　大学院　情報科学研究科\\住井・松田研究室}% 院生
+%\institute[東北大学　住井・松田研]{東北大学　大学院　情報科学研究科\\住井・松田研究室}% 院生
 %% 発表する日
-\date{2000年1月1日}
+\date{2016年7月9日}
 
 %% ===============================================
 %% 自動挿入される目次ページの設定（削除しても可）
 %% ===============================================
 
 %% section の先頭に自動挿入される目次ページ（削除すると、表示されなくなる）
-\AtBeginSection[]{
-\begin{frame}
-  \frametitle{アウトライン}
-  \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide]
-\end{frame}}
+%% \AtBeginSection[]{
+%% \begin{frame}
+%%   \frametitle{アウトライン}
+%%   \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+%% \end{frame}}
 %% subsection の先頭に自動挿入される目次ページ（削除すると、表示されなくなる）
-\AtBeginSubsection[]{
-\begin{frame}
-  \frametitle{アウトライン}
-  \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
-\end{frame}}
+%% \AtBeginSubsection[]{
+%% \begin{frame}
+%%   \frametitle{アウトライン}
+%%   \tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+%% \end{frame}}
 
 %% 現在の section 以外を非表示にする場合は以下のようにする
 
@@ -111,12 +111,31 @@
 \begin{document}
 \frame[plain]{\titlepage}% タイトルページ
 
-\section*{アウトライン}
+%% \section*{アウトライン}
 
 % 目次を表示させる（section を表示し、subsection は隠す）
+%% \begin{frame}
+%%   \frametitle{アウトライン}
+%%   \tableofcontents[sectionstyle=show,subsectionstyle=hide]
+%% \end{frame}
+
+\section{自己紹介}
 \begin{frame}
-  \frametitle{アウトライン}
-  \tableofcontents[sectionstyle=show,subsectionstyle=hide]
+	\frametitle{自己紹介}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\begin{itemize}
+				\item ろんだ(@fetburner)
+				\item 青葉山に篭ってCoqを書くM1
+				\item B3にSMLを書かせる演習でTAやってた
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{center}
+				\includegraphics[width=30mm]{icon.jpg}
+			\end{center}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \section{単純な使い方}
@@ -385,6 +404,12 @@ let fact n
       \end{itemize}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{結論}
+	\Huge
+	Standard MLは信用できる!
 \end{frame}
 
 %% ===============================================
