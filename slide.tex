@@ -127,7 +127,7 @@
 			\begin{itemize}
 				\item ろんだ(@fetburner)
 				\item 青葉山に篭ってCoqを書くM1
-				\item B3にSMLを書かせる演習でTAやってた
+				\item MLが好き
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.3\textwidth}
@@ -139,21 +139,25 @@
 \end{frame}
 
 \section{アウトライン}
+
 \begin{frame}
 	\frametitle{今日の発表内容}
 	\Large
 	処理系の形式的検証についてのサーベイ
 
+	\vfill
+
 	CakeMLの紹介
 \end{frame}
 
 \section{背景}
+
 \begin{frame}
 	\frametitle{動機}
 	\Large
 	バグの無いプログラムが書きたい
 
-	\pause\vfill
+	\vfill
 
 	$\Rightarrow$テストを書こう!
 \end{frame}
@@ -164,13 +168,94 @@
 	"Program testing can be used to show the presence of bugs, but never to show their absence!"
 	(E.W. Dijkstra)
 
-	\pause\vfill
+	\vfill
 
-	テストだけでは力不足…
+	テストだけでは力不足$\cdots$
 
-	\pause\vfill
+	\vfill
 
-	$\Rightarrow$プログラムが仕様を満たす事を数学的に証明しよう！
+	$\Rightarrow$形式手法の出番
+\end{frame}
+
+\begin{frame}
+	\frametitle{形式手法}
+	\Large
+	プログラムの仕様を形式的に書き下して証明
+
+	\vfill
+
+	プログラムにバグがない事が数学的に保障
+\end{frame}
+
+\begin{frame}
+	\frametitle{現実}
+	\Large 
+	プログラムの正しさは処理系の正しさに依存
+
+	\vfill
+
+	証明付きのプログラムも間違ったコンパイラでコンパイルしては正しく動かない$\cdots$
+
+	\vfill
+
+	$\Rightarrow$処理系も検証しよう！
+\end{frame}
+
+\section{関連研究}
+
+\begin{frame}
+	\frametitle{先行研究}
+	\Large
+	CompCert[Leroyら 2006]
+	\begin{itemize}
+		\item 言語処理系検証のマイルストーン
+		\item 実用的なCコンパイラの検証
+			\begin{itemize}
+				\item ANSI Cの大部分をサポート
+				\item PowerPC、ARM、x86のネイティブコードを出力
+				\item GCCに匹敵するパフォーマンス
+			\end{itemize}
+		\item 大部分をCoqで検証
+	\end{itemize}
+
+	\vfill
+
+	でもC言語なんて書きたくないよね$\cdots$
+\end{frame}
+
+\begin{frame}
+	\frametitle{関数型言語の検証}
+	\Large
+	ML処理系を検証する試みも多数存在
+
+	\begin{itemize}
+		\item LambdaTamer[Clipala 2010]
+		\item Pilsner[Neisら 2015]
+		\item CakeML[Kumarら 2014]
+	\end{itemize}
+
+	\vfill
+
+	今回は特にCakeMLに注目
+\end{frame}
+
+\section{CakeML}
+\begin{frame}
+	\frametitle{CakeML}
+	\Large
+	実用的なStandard ML処理系の検証
+	\begin{itemize}
+		\item ブートストラップにも成功
+		\item ARMv6、ARMv8、MIPS-64、RISC-Vのネイティブコードを出力
+		\item Poly/MLの数倍速い
+	\end{itemize}
+
+	HOL4による執拗なまでの証明
+\end{frame}
+
+\subsection{対象言語}
+\begin{frame}
+	\frametitle{対象言語の文法}
 \end{frame}
 
 \section{単純な使い方}
@@ -443,8 +528,13 @@ let fact n
 
 \begin{frame}
 	\frametitle{結論}
+	\large
+	\only<1>{SMLにはこんなにも検証された処理系がある$\cdots$}
+
+	\pause
+
 	\Huge
-	Standard MLは信用できる!
+	\only<2>{Standard MLは信用できる!}
 \end{frame}
 
 %% ===============================================
