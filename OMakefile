@@ -13,6 +13,7 @@ TEXDEPS[] =
 	beamerthemesumiilab.sty
 	$(glob i,*.eps)
 	$(addsuffix .xbb, $(removesuffix $(glob i,*.jpg)))
+	$(addsuffix .xbb, $(removesuffix $(glob i,*.png)))
 
 .PHONY: all clean
 
@@ -21,6 +22,9 @@ LaTeXDocument($(TARGET), $(TARGET))
 .DEFAULT: $(TARGET).pdf $(TARGET).dvi
 
 %.xbb: %.jpg
+	ebb -x $<
+
+%.xbb: %.png
 	ebb -x $<
 
 clean:
