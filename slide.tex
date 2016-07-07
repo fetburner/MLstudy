@@ -261,30 +261,55 @@
 	Standard MLのサブセット
 	\begin{itemize}
 		\item 副作用
+			\begin{itemize}
+				\item 参照
+				\item 例外
+			\end{itemize}
 		\item ヴァリアント
 		\item パターンマッチ
-
+		\item モジュール
 	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{なぜStandard MLか？}
-	\Large
-	言語仕様が厳密に定義されている
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			OCaml
-			
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			Standard ML
-		\end{column}
-	\end{columns}
 \end{frame}
 
 \begin{frame}
 	\frametitle{対象言語の文法}
 	\includegraphics[width=80mm]{./syntax.png}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{なぜStandard MLか？}
+	\Large
+	言語仕様が厳密に定義されている
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			OCaml
+			
+			\vfill
+
+\begin{lstlisting}
+(print_string "Mt. "; 1)
++ (print_string "Aoba"; 2)
+\end{lstlisting}
+
+			\vfill
+
+			未定義動作
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			Standard ML
+
+			\vfill
+
+\begin{lstlisting}
+(print "Mt. "; 1)
++ (print "Aoba"; 2)
+\end{lstlisting}
+
+			\vfill
+
+			"Mt. Aoba"と表示
+		\end{column}
+	\end{columns}
 \end{frame}
 
 
